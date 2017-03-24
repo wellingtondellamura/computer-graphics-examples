@@ -43,6 +43,7 @@
             this.cinzaNTSC1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.binarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -122,7 +123,8 @@
             this.cinzaNTSCToolStripMenuItem,
             this.cinzaNTSCPtrToolStripMenuItem,
             this.cinzaNTSCMarshallToolStripMenuItem,
-            this.cinzaNTSC1ToolStripMenuItem});
+            this.cinzaNTSC1ToolStripMenuItem,
+            this.binarizaçãoToolStripMenuItem});
             this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
             this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.filtrosToolStripMenuItem.Text = "Filtros";
@@ -165,6 +167,13 @@
             this.saveFileDialog.DefaultExt = "jpg";
             this.saveFileDialog.Title = "Salvar imagem";
             // 
+            // binarizaçãoToolStripMenuItem
+            // 
+            this.binarizaçãoToolStripMenuItem.Name = "binarizaçãoToolStripMenuItem";
+            this.binarizaçãoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.binarizaçãoToolStripMenuItem.Text = "Binarização";
+            this.binarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.binarizaçãoToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +210,7 @@
         private System.Windows.Forms.ToolStripMenuItem cinzaNTSCPtrToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cinzaNTSCMarshallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cinzaNTSC1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem binarizaçãoToolStripMenuItem;
     }
 }
 

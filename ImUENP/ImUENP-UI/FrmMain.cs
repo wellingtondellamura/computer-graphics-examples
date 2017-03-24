@@ -105,5 +105,14 @@ namespace ImUENP.UI
             var elapsedMs = watch.ElapsedMilliseconds;
             MessageBox.Show(elapsedMs + "ms");
         }
+
+        private void binarizaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var bmp = pictureBox1.Image;
+            var img = RGBImage.FromImage((Bitmap)bmp);
+            var bin = new Threshold(127).Process(img);
+            pictureBox1.Image = bin.ToImage();
+            pictureBox1.Refresh();
+        }
     }
 }

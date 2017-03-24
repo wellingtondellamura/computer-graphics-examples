@@ -14,8 +14,10 @@ namespace ImUENP.UI.Filters
         public unsafe Image Process(Image img)
         {
             Bitmap image = (Bitmap)img.Clone();
+            
             Rectangle r = new Rectangle(0, 0, image.Width, image.Height);
-            BitmapData imageData = image.LockBits(r, ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+            BitmapData imageData = image.LockBits(r, ImageLockMode.ReadWrite, 
+                                        PixelFormat.Format24bppRgb);
             int bytesPerPixel = 3;
 
             byte* scan0 = (byte*)imageData.Scan0.ToPointer();
@@ -37,7 +39,7 @@ namespace ImUENP.UI.Filters
 
                     byte g = (byte)(pixelR * 0.3 + pixelG * 0.59 + pixelB * 0.11);
 
-                    row[rIndex] = row[bIndex] = row[gIndex] = g;
+                    row[rIndex] = row[gIndex] = row[bIndex] = g;
                 }
             }
 
