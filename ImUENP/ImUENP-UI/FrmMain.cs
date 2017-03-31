@@ -134,5 +134,33 @@ namespace ImUENP.UI
             var elapsedMs = watch.ElapsedMilliseconds;
             MessageBox.Show(elapsedMs + "ms");
         }
+
+        private void médiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            var img = (Bitmap)pictureBox1.Image;
+            var gray = new Average(3).Process(RGBImage.FromImage(img));
+            pictureBox1.Image = gray.ToImage();
+            pictureBox1.Refresh();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+            MessageBox.Show(elapsedMs + "ms");
+        }
+
+        private void medianaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            var img = (Bitmap)pictureBox1.Image;
+            var gray = new Median(3).Process(RGBImage.FromImage(img));
+            pictureBox1.Image = gray.ToImage();
+            pictureBox1.Refresh();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+            MessageBox.Show(elapsedMs + "ms");
+        }
     }
 }

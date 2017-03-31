@@ -42,9 +42,11 @@
             this.cinzaNTSCMarshallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cinzaNTSC1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multilimiarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.multilimiarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.médiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -126,7 +128,9 @@
             this.cinzaNTSCMarshallToolStripMenuItem,
             this.cinzaNTSC1ToolStripMenuItem,
             this.binarizaçãoToolStripMenuItem,
-            this.multilimiarizaçãoToolStripMenuItem});
+            this.multilimiarizaçãoToolStripMenuItem,
+            this.médiaToolStripMenuItem,
+            this.medianaToolStripMenuItem});
             this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
             this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.filtrosToolStripMenuItem.Text = "Filtros";
@@ -166,6 +170,13 @@
             this.binarizaçãoToolStripMenuItem.Text = "Binarização";
             this.binarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.binarizaçãoToolStripMenuItem_Click);
             // 
+            // multilimiarizaçãoToolStripMenuItem
+            // 
+            this.multilimiarizaçãoToolStripMenuItem.Name = "multilimiarizaçãoToolStripMenuItem";
+            this.multilimiarizaçãoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.multilimiarizaçãoToolStripMenuItem.Text = "Multilimiarização";
+            this.multilimiarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.multilimiarizaçãoToolStripMenuItem_Click);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.Filter = "Arquivos de Imagem|*.*";
@@ -176,12 +187,19 @@
             this.saveFileDialog.DefaultExt = "jpg";
             this.saveFileDialog.Title = "Salvar imagem";
             // 
-            // multilimiarizaçãoToolStripMenuItem
+            // médiaToolStripMenuItem
             // 
-            this.multilimiarizaçãoToolStripMenuItem.Name = "multilimiarizaçãoToolStripMenuItem";
-            this.multilimiarizaçãoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.multilimiarizaçãoToolStripMenuItem.Text = "Multilimiarização";
-            this.multilimiarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.multilimiarizaçãoToolStripMenuItem_Click);
+            this.médiaToolStripMenuItem.Name = "médiaToolStripMenuItem";
+            this.médiaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.médiaToolStripMenuItem.Text = "Média";
+            this.médiaToolStripMenuItem.Click += new System.EventHandler(this.médiaToolStripMenuItem_Click);
+            // 
+            // medianaToolStripMenuItem
+            // 
+            this.medianaToolStripMenuItem.Name = "medianaToolStripMenuItem";
+            this.medianaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.medianaToolStripMenuItem.Text = "Mediana";
+            this.medianaToolStripMenuItem.Click += new System.EventHandler(this.medianaToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -221,6 +239,8 @@
         private System.Windows.Forms.ToolStripMenuItem cinzaNTSC1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binarizaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem multilimiarizaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem médiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem medianaToolStripMenuItem;
     }
 }
 

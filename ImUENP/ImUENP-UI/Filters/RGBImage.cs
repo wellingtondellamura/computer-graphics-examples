@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace ImUENP.UI.Filters
 {
-    public class RGBImage: ICloneable
+    public class RGBImage : ICloneable
     {
+        public ColorType Type { get; set; }
+
         private RGB[,] pixels;
 
         public Int32 Width { get; set; }
@@ -17,6 +19,7 @@ namespace ImUENP.UI.Filters
 
         public RGBImage(Int32 w, Int32 h)
         {
+            Type = ColorType.Color;
             Width = w;
             Height = h;
             pixels = new RGB[w, h];
@@ -116,6 +119,11 @@ namespace ImUENP.UI.Filters
             }
             return dolly;
         }
+    }
+
+    public enum ColorType
+    {
+        Color, Grayscale, Binary
     }
 
     public struct RGB

@@ -22,6 +22,7 @@ namespace ImUENP.UI.Filters
                     image.SetPixel(i, j, new RGB(ig, ig, ig));
                 }
             }
+            image.Type = ColorType.Grayscale;
             return image;
         }
     }

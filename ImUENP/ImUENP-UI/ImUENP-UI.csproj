@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filters\Median.cs" />
     <Compile Include="Filters\MultiThreshold.cs" />
+    <Compile Include="Filters\Average.cs" />
     <Compile Include="Filters\Threshold.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>

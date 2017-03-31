@@ -42,6 +42,8 @@ namespace ImUENP.UI.Filters
                     
                 }
             }
+
+            image.Type = ColorType.Binary;
             return image;
         }
     }
