@@ -114,5 +114,25 @@ namespace ImUENP.UI
             pictureBox1.Image = bin.ToImage();
             pictureBox1.Refresh();
         }
+
+        private void multilimiarizaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            var bmp = pictureBox1.Image;
+            var img = RGBImage.FromImage((Bitmap)bmp);
+            var bin = new MultiThreshold(
+                new ThresholdPoint(0, 80, new RGB(0, 255, 0)),
+                new ThresholdPoint(80, 200, new RGB(255, 0, 0)),
+                new ThresholdPoint(200, 230, new RGB(0, 0, 255)),
+                new ThresholdPoint(230, 255, new RGB(255, 0, 255))
+            ).Process(img);
+            pictureBox1.Image = bin.ToImage();
+            pictureBox1.Refresh();
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+            MessageBox.Show(elapsedMs + "ms");
+        }
     }
 }

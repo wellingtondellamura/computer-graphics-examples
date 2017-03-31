@@ -124,6 +124,13 @@ namespace ImUENP.UI.Filters
         public Byte G;
         public Byte B;
 
+        public RGB(Byte gray)
+        {
+            R = gray;
+            G = gray;
+            B = gray;
+        }
+
         public RGB(Byte r, Byte g, Byte b)
         {
             R = r;

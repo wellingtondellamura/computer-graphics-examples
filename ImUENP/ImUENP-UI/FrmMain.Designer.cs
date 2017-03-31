@@ -41,9 +41,10 @@
             this.cinzaNTSCPtrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cinzaNTSCMarshallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cinzaNTSC1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.binarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.binarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multilimiarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -124,7 +125,8 @@
             this.cinzaNTSCPtrToolStripMenuItem,
             this.cinzaNTSCMarshallToolStripMenuItem,
             this.cinzaNTSC1ToolStripMenuItem,
-            this.binarizaçãoToolStripMenuItem});
+            this.binarizaçãoToolStripMenuItem,
+            this.multilimiarizaçãoToolStripMenuItem});
             this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
             this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.filtrosToolStripMenuItem.Text = "Filtros";
@@ -157,6 +159,13 @@
             this.cinzaNTSC1ToolStripMenuItem.Text = "Cinza NTSC 1";
             this.cinzaNTSC1ToolStripMenuItem.Click += new System.EventHandler(this.cinzaNTSC1ToolStripMenuItem_Click);
             // 
+            // binarizaçãoToolStripMenuItem
+            // 
+            this.binarizaçãoToolStripMenuItem.Name = "binarizaçãoToolStripMenuItem";
+            this.binarizaçãoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.binarizaçãoToolStripMenuItem.Text = "Binarização";
+            this.binarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.binarizaçãoToolStripMenuItem_Click);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.Filter = "Arquivos de Imagem|*.*";
@@ -167,12 +176,12 @@
             this.saveFileDialog.DefaultExt = "jpg";
             this.saveFileDialog.Title = "Salvar imagem";
             // 
-            // binarizaçãoToolStripMenuItem
+            // multilimiarizaçãoToolStripMenuItem
             // 
-            this.binarizaçãoToolStripMenuItem.Name = "binarizaçãoToolStripMenuItem";
-            this.binarizaçãoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.binarizaçãoToolStripMenuItem.Text = "Binarização";
-            this.binarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.binarizaçãoToolStripMenuItem_Click);
+            this.multilimiarizaçãoToolStripMenuItem.Name = "multilimiarizaçãoToolStripMenuItem";
+            this.multilimiarizaçãoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.multilimiarizaçãoToolStripMenuItem.Text = "Multilimiarização";
+            this.multilimiarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.multilimiarizaçãoToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -211,6 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem cinzaNTSCMarshallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cinzaNTSC1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binarizaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multilimiarizaçãoToolStripMenuItem;
     }
 }
 

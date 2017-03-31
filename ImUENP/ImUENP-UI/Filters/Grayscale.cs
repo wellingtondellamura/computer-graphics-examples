@@ -16,7 +16,7 @@ namespace ImUENP.UI.Filters
             {
                 for (int j = 0; j< image.Height; j++)
                 {
-                    var p = image.GetPixel(i, j);
+                    var p = image.GetPixel(i, j);                    
                     var g = p.R * 0.3 + p.G * 0.59 + p.B * 0.11;
                     Byte ig = (Byte) g;
                     image.SetPixel(i, j, Color.FromArgb(ig, ig, ig));
