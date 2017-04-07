@@ -35,9 +35,11 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnOCR = new System.Windows.Forms.ToolStripButton();
             this.PnlText = new System.Windows.Forms.Panel();
+            this.txtText = new System.Windows.Forms.TextBox();
             this.pnlImage = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.txtText = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tsMain.SuspendLayout();
             this.PnlText.SuspendLayout();
             this.pnlImage.SuspendLayout();
@@ -53,10 +55,11 @@
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnOpen,
             this.toolStripSeparator1,
-            this.btnOCR});
+            this.btnOCR,
+            this.toolStripButton1});
             this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(1011, 71);
+            this.tsMain.Size = new System.Drawing.Size(1011, 25);
             this.tsMain.TabIndex = 1;
             this.tsMain.Text = "toolStrip1";
             // 
@@ -64,10 +67,9 @@
             // 
             this.btnOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnOpen.Image = ((System.Drawing.Image)(resources.GetObject("btnOpen.Image")));
-            this.btnOpen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(68, 68);
+            this.btnOpen.Size = new System.Drawing.Size(23, 22);
             this.btnOpen.Text = "Abrir Imagem";
             this.btnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
@@ -75,16 +77,15 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 71);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // btnOCR
             // 
             this.btnOCR.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnOCR.Image = ((System.Drawing.Image)(resources.GetObject("btnOCR.Image")));
-            this.btnOCR.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnOCR.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOCR.Name = "btnOCR";
-            this.btnOCR.Size = new System.Drawing.Size(68, 68);
+            this.btnOCR.Size = new System.Drawing.Size(23, 22);
             this.btnOCR.Text = "Processar";
             this.btnOCR.Click += new System.EventHandler(this.btnOCR_Click);
             // 
@@ -98,25 +99,6 @@
             this.PnlText.Size = new System.Drawing.Size(1011, 176);
             this.PnlText.TabIndex = 2;
             // 
-            // pnlImage
-            // 
-            this.pnlImage.AutoScroll = true;
-            this.pnlImage.Controls.Add(this.pictureBox);
-            this.pnlImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlImage.Location = new System.Drawing.Point(0, 71);
-            this.pnlImage.Name = "pnlImage";
-            this.pnlImage.Size = new System.Drawing.Size(1011, 364);
-            this.pnlImage.TabIndex = 3;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
-            // 
             // txtText
             // 
             this.txtText.AcceptsReturn = true;
@@ -129,6 +111,40 @@
             this.txtText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtText.Size = new System.Drawing.Size(1007, 172);
             this.txtText.TabIndex = 0;
+            // 
+            // pnlImage
+            // 
+            this.pnlImage.AutoScroll = true;
+            this.pnlImage.Controls.Add(this.pictureBox);
+            this.pnlImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlImage.Location = new System.Drawing.Point(0, 25);
+            this.pnlImage.Name = "pnlImage";
+            this.pnlImage.Size = new System.Drawing.Size(1011, 410);
+            this.pnlImage.TabIndex = 3;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // FrmMain
             // 
@@ -164,6 +180,8 @@
         private System.Windows.Forms.Panel pnlImage;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TextBox txtText;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AForge.Imaging;
+using AForge.Imaging.Filters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +24,7 @@ namespace ImUENP.OCR
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                pictureBox.Image = System.Drawing.Image.FromFile(openFileDialog.FileName);
             }
         }
 
@@ -31,9 +33,32 @@ namespace ImUENP.OCR
             var datapath = @"tessdata";
             var lang = "por";
             var img = (Bitmap) pictureBox.Image;
+           
+            //Cinza
+            img = Grayscale.CommonAlgorithms.Y.Apply(img);
+            //Mediana
+            img = new Median(3).Apply(img);
+            //Otsu
+            img = new OtsuThreshold().Apply(img);
+
             var ocr = new TesseractEngine(datapath, lang, EngineMode.TesseractOnly);
             var page = ocr.Process(img);
             txtText.Text = page.GetText();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var img = (Bitmap)pictureBox.Image;
+            img = new Invert().Apply(img);
+            BlobCounter bc = new BlobCounter();
+            bc.ProcessImage(img);
+            var blobs = bc.GetObjectsRectangles();
+            MessageBox.Show("Objetos: " + blobs.Length);
         }
     }
 }
