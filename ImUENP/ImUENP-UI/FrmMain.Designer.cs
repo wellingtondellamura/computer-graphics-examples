@@ -43,10 +43,12 @@
             this.cinzaNTSC1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multilimiarizaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.médiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medianaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.aforgeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grayscaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -77,7 +79,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
-            this.filtrosToolStripMenuItem});
+            this.filtrosToolStripMenuItem,
+            this.aforgeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(638, 24);
@@ -177,16 +180,6 @@
             this.multilimiarizaçãoToolStripMenuItem.Text = "Multilimiarização";
             this.multilimiarizaçãoToolStripMenuItem.Click += new System.EventHandler(this.multilimiarizaçãoToolStripMenuItem_Click);
             // 
-            // openFileDialog
-            // 
-            this.openFileDialog.Filter = "Arquivos de Imagem|*.*";
-            this.openFileDialog.Title = "Abrir Imagem";
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.DefaultExt = "jpg";
-            this.saveFileDialog.Title = "Salvar imagem";
-            // 
             // médiaToolStripMenuItem
             // 
             this.médiaToolStripMenuItem.Name = "médiaToolStripMenuItem";
@@ -200,6 +193,31 @@
             this.medianaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.medianaToolStripMenuItem.Text = "Mediana";
             this.medianaToolStripMenuItem.Click += new System.EventHandler(this.medianaToolStripMenuItem_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "Arquivos de Imagem|*.*";
+            this.openFileDialog.Title = "Abrir Imagem";
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "jpg";
+            this.saveFileDialog.Title = "Salvar imagem";
+            // 
+            // aforgeToolStripMenuItem
+            // 
+            this.aforgeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grayscaleToolStripMenuItem});
+            this.aforgeToolStripMenuItem.Name = "aforgeToolStripMenuItem";
+            this.aforgeToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.aforgeToolStripMenuItem.Text = "Aforge";
+            // 
+            // grayscaleToolStripMenuItem
+            // 
+            this.grayscaleToolStripMenuItem.Name = "grayscaleToolStripMenuItem";
+            this.grayscaleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayscaleToolStripMenuItem.Text = "Grayscale";
+            this.grayscaleToolStripMenuItem.Click += new System.EventHandler(this.grayscaleToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -241,6 +259,8 @@
         private System.Windows.Forms.ToolStripMenuItem multilimiarizaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem médiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem medianaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aforgeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grayscaleToolStripMenuItem;
     }
 }
 

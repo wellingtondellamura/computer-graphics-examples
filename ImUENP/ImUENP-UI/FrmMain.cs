@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ImUENP.UI.Filters;
+using AForge.Imaging.Filters;
 
 namespace ImUENP.UI
 {
@@ -52,16 +52,16 @@ namespace ImUENP.UI
 
         private void cinzaNTSCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
+            //var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            var img = (Bitmap)pictureBox1.Image;            
-            var gray = new Grayscale().Process(img);
-            pictureBox1.Image = gray;
-            pictureBox1.Refresh();
+            //var img = (Bitmap)pictureBox1.Image;            
+            //var gray = new Grayscale().Process(img);
+            //pictureBox1.Image = gray;
+            //pictureBox1.Refresh();
 
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-            MessageBox.Show(elapsedMs+"ms");
+            //watch.Stop();
+            //var elapsedMs = watch.ElapsedMilliseconds;
+            //MessageBox.Show(elapsedMs+"ms");
         }
 
         private void cinzaNTSCPtrToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace ImUENP.UI
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
             var img = (Bitmap)pictureBox1.Image;
-            var gray = new Grayscale3().Process(img);
+            var gray = new Filters.Grayscale3().Process(img);
             pictureBox1.Image = gray;
             pictureBox1.Refresh();
 
@@ -83,7 +83,7 @@ namespace ImUENP.UI
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
             var img = (Bitmap)pictureBox1.Image;
-            var gray = new Grayscale2().Process(img);
+            var gray = new Filters.Grayscale2().Process(img);
             pictureBox1.Image = gray;
             pictureBox1.Refresh();
 
@@ -97,7 +97,7 @@ namespace ImUENP.UI
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
             var img = (Bitmap)pictureBox1.Image;
-            var gray = new Grayscale1().Process(RGBImage.FromImage(img));
+            var gray = new Filters.Grayscale1().Process(Filters.RGBImage.FromImage(img));
             pictureBox1.Image = gray.ToImage();
             pictureBox1.Refresh();
 
@@ -108,54 +108,77 @@ namespace ImUENP.UI
 
         private void binarizaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var bmp = pictureBox1.Image;
-            var img = RGBImage.FromImage((Bitmap)bmp);
-            var bin = new Threshold(127).Process(img);
-            pictureBox1.Image = bin.ToImage();
-            pictureBox1.Refresh();
+            //var bmp = pictureBox1.Image;
+            //var img = Filters.RGBImage.FromImage((Bitmap)bmp);
+            //var bin = new Threshold(127).Process(img);
+            //pictureBox1.Image = bin.ToImage();
+            //pictureBox1.Refresh();
         }
 
         private void multilimiarizaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
+            //var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            var bmp = pictureBox1.Image;
-            var img = RGBImage.FromImage((Bitmap)bmp);
-            var bin = new MultiThreshold(
-                new ThresholdPoint(0, 80, new RGB(0, 255, 0)),
-                new ThresholdPoint(80, 200, new RGB(255, 0, 0)),
-                new ThresholdPoint(200, 230, new RGB(0, 0, 255)),
-                new ThresholdPoint(230, 255, new RGB(255, 0, 255))
-            ).Process(img);
-            pictureBox1.Image = bin.ToImage();
-            pictureBox1.Refresh();
+            //var bmp = pictureBox1.Image;
+            //var img = RGBImage.FromImage((Bitmap)bmp);
+            //var bin = new MultiThreshold(
+            //    new ThresholdPoint(0, 80, new RGB(0, 255, 0)),
+            //    new ThresholdPoint(80, 200, new RGB(255, 0, 0)),
+            //    new ThresholdPoint(200, 230, new RGB(0, 0, 255)),
+            //    new ThresholdPoint(230, 255, new RGB(255, 0, 255))
+            //).Process(img);
+            //pictureBox1.Image = bin.ToImage();
+            //pictureBox1.Refresh();
 
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-            MessageBox.Show(elapsedMs + "ms");
+            //watch.Stop();
+            //var elapsedMs = watch.ElapsedMilliseconds;
+            //MessageBox.Show(elapsedMs + "ms");
         }
 
         private void médiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
+            //var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            var img = (Bitmap)pictureBox1.Image;
-            var gray = new Average(3).Process(RGBImage.FromImage(img));
-            pictureBox1.Image = gray.ToImage();
-            pictureBox1.Refresh();
+            //var img = (Bitmap)pictureBox1.Image;
+            //var gray = new Average(3).Process(RGBImage.FromImage(img));
+            //pictureBox1.Image = gray.ToImage();
+            //pictureBox1.Refresh();
 
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-            MessageBox.Show(elapsedMs + "ms");
+            //watch.Stop();
+            //var elapsedMs = watch.ElapsedMilliseconds;
+            //MessageBox.Show(elapsedMs + "ms");
         }
 
         private void medianaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            //var img = (Bitmap)pictureBox1.Image;
+            //var gray = new Filters.Median(3).Process(RGBImage.FromImage(img));
+            //pictureBox1.Image = gray.ToImage();
+            //pictureBox1.Refresh();
+
+            //watch.Stop();
+            //var elapsedMs = watch.ElapsedMilliseconds;
+            //MessageBox.Show(elapsedMs + "ms");
+        }
+
+        private void grayscaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<IFilter> filters = new List<IFilter>();
+            filters.Add(Grayscale.CommonAlgorithms.Y);
+            filters.Add(new OtsuThreshold());
+            ApplyFilter(filters);
+        }
+
+        private void ApplyFilter(List<IFilter> filters)
+        {
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
             var img = (Bitmap)pictureBox1.Image;
-            var gray = new Median(3).Process(RGBImage.FromImage(img));
-            pictureBox1.Image = gray.ToImage();
+            Bitmap res = img;
+            filters.ForEach(f => res = f.Apply(res));
+            pictureBox1.Image = res;
             pictureBox1.Refresh();
 
             watch.Stop();
