@@ -1,0 +1,29 @@
+Conceitos básicos de uma aplicação WebGL
+========================================
+
+Em linhas gerais, desenhar utilizando WebGL é muito parecido com o que fazemos
+com Canvas 2D. Na realidade, o WebGL utiliza um elemento canvas para exibir
+as imagens geradas. Para renderizar WebGL em uma página HTML, são necesários os
+seguintes passos:
+
+1. Criar um elemento canvas.
+2. Obter um contexto de desenho para a tela.
+3. Iniciar a viewport.
+4. Crie um ou mais buffers contendo os dados que serão renderizados (geralmente vértices).
+5. Crie uma ou mais matrizes para definir a transformação dos buffers na tela.
+6. Crie um ou mais shaders para implementar o algoritmo de desenho.
+7. Inicialize os shaders com parâmetros.
+8. Desenhar a imagem.
+
+
+
+Leituras importantes
+  https://get.webgl.org/get-a-webgl-implementation/
+  https://www.khronos.org/registry/webgl/specs/
+
+Exemplos de modelos
+  http://www.ibiblio.org/e-notes/webgl/webgl.htm
+  https://playcanv.as/e/p/44MRmJRU/
+
+Bibliotecas auxiliares
+  http://glmatrix.net/

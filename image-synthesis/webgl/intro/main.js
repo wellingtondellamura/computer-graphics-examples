@@ -8,9 +8,11 @@ function setupWebGL(){
 
 function setupWhatToDraw(){
   var positions = [
-    0.0, 0.0,//1st vertex
-    1.0, 0.0,//2nd vertex
-    0.0, 1.0 //3rd vertex
+    0.0, 0.0,
+    1.0, 0.0,
+    0.0, 1.0,
+    1.0, 1.0,
+    0.0, 0.0
   ];
   var typedPositions = new Float32Array(positions);
   var positionsBuffer = gl.createBuffer();
@@ -55,7 +57,7 @@ function setupHowToDraw(){
 function draw(){
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
   gl.clear(gl.COLOR_BUFFER_BIT);
-  gl.drawArrays(gl.TRIANGLES, 0, 3);
+  gl.drawArrays(gl.LINE_LOOP, 0, 5);
 }
 
 function helloDraw(){
