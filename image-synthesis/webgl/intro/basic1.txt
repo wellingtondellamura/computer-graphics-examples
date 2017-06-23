@@ -21,6 +21,8 @@ Leituras importantes
   https://get.webgl.org/get-a-webgl-implementation/
   https://www.khronos.org/registry/webgl/specs/
   https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/drawArrays
+  https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Types
+  http://www.ecma-international.org/ecma-262/6.0/#sec-typedarray-objects
 
 Exemplos de modelos
   http://www.ibiblio.org/e-notes/webgl/webgl.htm
