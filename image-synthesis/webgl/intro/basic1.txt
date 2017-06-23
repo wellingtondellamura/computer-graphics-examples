@@ -20,10 +20,13 @@ seguintes passos:
 Leituras importantes
   https://get.webgl.org/get-a-webgl-implementation/
   https://www.khronos.org/registry/webgl/specs/
+  https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/drawArrays
 
 Exemplos de modelos
   http://www.ibiblio.org/e-notes/webgl/webgl.htm
   https://playcanv.as/e/p/44MRmJRU/
 
-Bibliotecas auxiliares
+Links auxiliares
   http://glmatrix.net/
+  http://doc.instantreality.org/tools/color_calculator/
+  https://www.khronos.org/opengl/wiki/Primitive
