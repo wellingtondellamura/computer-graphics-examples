@@ -1,0 +1,47 @@
+<html>
+<head>
+  <script src="http://cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
+  <style>
+  body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  </style>
+
+</head>
+<body onload="init()">
+  <script>
+
+  function init() {
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
+    camera.position.z = 1000;
+    scene = new THREE.Scene();
+
+    var mesh = new THREE.Mesh(
+      new THREE.SphereGeometry(200, 32, 32),
+      new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})
+    );
+    mesh.position.x = -400;
+    mesh.position.y = -100;
+
+    scene.add(mesh);
+
+    var mesh2 = new THREE.Mesh(
+      new THREE.SphereGeometry(300, 32, 32),
+      new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe: true})
+    );
+    mesh2.position.x = 400;
+    mesh2.position.y = 100;
+
+    scene.add(mesh2);
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    renderer.render(scene, camera);
+  }
+  </script>
+</body>
+</html>

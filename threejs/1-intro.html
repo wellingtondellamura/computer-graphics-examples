@@ -1,0 +1,53 @@
+<html>
+<head>
+  <script src="http://cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
+  <style>
+  body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  </style>
+
+</head>
+<body onload="init()">
+  <script>
+  var camera, scene, renderer, geometry, material, mesh;
+
+  function init() {
+    //https://threejs.org/docs/#api/cameras/PerspectiveCamera
+    //https://en.wikipedia.org/wiki/Viewing_frustum
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
+    camera.position.z = 1000;
+
+    //https://threejs.org/docs/#manual/introduction/Creating-a-scene
+    scene = new THREE.Scene();
+
+    //https://threejs.org/docs/#api/geometries/BoxGeometry
+    geometry = new THREE.BoxGeometry(200, 200, 200);
+    //https://threejs.org/docs/#api/geometries/SphereGeometry
+    //geometry = new THREE.SphereGeometry(300, 32, 32);
+
+    //https://threejs.org/docs/#api/materials/MeshBasicMaterial
+    material = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true});
+
+    //https://threejs.org/docs/#api/objects/Mesh
+    mesh = new THREE.Mesh(geometry, material);
+    mesh.rotation.x = 1;
+    mesh.rotation.y = 1;
+
+    scene.add(mesh);
+
+    //https://threejs.org/docs/#api/renderers/WebGLRenderer
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    renderer.render(scene, camera);
+
+    //renderer.info.;
+    //https://threejs.org/docs/#manual/introduction/WebGL-compatibility-check
+  }
+  </script>
+</body>
+</html>
