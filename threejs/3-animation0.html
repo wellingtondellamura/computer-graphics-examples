@@ -23,10 +23,10 @@
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.z = 1000;
     scene = new THREE.Scene();
-    //geometry = new THREE.BoxGeometry(200, 200, 200);
-    geometry = new THREE.SphereGeometry(200, 256, 256);
+    geometry = new THREE.BoxGeometry(200, 200, 200);
+    //geometry = new THREE.SphereGeometry(200, 256, 256);
     material = new THREE.MeshBasicMaterial({
-      color: 0x07cca0,
+      color: 0x000000,
       wireframe: true
     });
     mesh = new THREE.Mesh(geometry, material);
@@ -41,13 +41,13 @@
     mesh.rotation.x += 0.01;
     mesh.rotation.y += 0.01;
 
-    // var r = material.color.r;
-    // var g = material.color.g;
-    // var b = material.color.b;
-    // r += 0.002;
-    // g += 0.001;
-    // b += 0.001;
-    // material.color.setRGB(r,g,b);
+    var r = material.color.r;
+    var g = material.color.g;
+    var b = material.color.b;
+    r += 0.001;
+    g += 0.001;
+    b += 0.001;
+    material.color.setRGB(r,g,b);
 
     renderer.render(scene, camera);
   }

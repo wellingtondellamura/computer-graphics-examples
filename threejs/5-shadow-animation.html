@@ -22,11 +22,11 @@
   function init() {
         scene = new THREE.Scene();
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
-        renderer = new THREE.WebGLRenderer();
+        renderer = new THREE.WebGLRenderer({antialias:false});
         renderer.setSize(window.innerWidth, window.innerHeight);
         //http://learningthreejs.com/blog/2012/01/20/casting-shadows/
         renderer.shadowMap.enabled = true;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // PCFShadowMap/PCFSoftShadowMap/PCFBasicShadowMap
+        renderer.shadowMap.type = THREE.PCFShadowMap; // PCFShadowMap/PCFSoftShadowMap/PCFBasicShadowMap
 
         var plane = new THREE.Mesh(
             new THREE.PlaneGeometry(30, 30),

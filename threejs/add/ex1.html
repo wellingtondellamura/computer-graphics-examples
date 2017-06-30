@@ -12,7 +12,7 @@
 </head>
 <body onload="start()">
   <script>
-  var camera, scene, renderer, geometry, material, mesh;
+  var camera, scene, renderer, mesh;
 
   function start(){
     init();
@@ -23,12 +23,12 @@
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.z = 1000;
     scene = new THREE.Scene();
-    //geometry = new THREE.BoxGeometry(200, 200, 200);
-    geometry = new THREE.SphereGeometry(200, 256, 256);
-    material = new THREE.MeshBasicMaterial({
-      color: 0x07cca0,
-      wireframe: true
-    });
+
+    var texture = new THREE.TextureLoader().load( 'crate.gif' );
+	  var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+    var material = new THREE.MeshBasicMaterial( { map: texture } );
+
+
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
     renderer = new THREE.WebGLRenderer();
@@ -40,15 +40,6 @@
     requestAnimationFrame(animate);
     mesh.rotation.x += 0.01;
     mesh.rotation.y += 0.01;
-
-    // var r = material.color.r;
-    // var g = material.color.g;
-    // var b = material.color.b;
-    // r += 0.002;
-    // g += 0.001;
-    // b += 0.001;
-    // material.color.setRGB(r,g,b);
-
     renderer.render(scene, camera);
   }
 
